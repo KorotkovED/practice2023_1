@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+
+  db:
+    container_name: db
+    image: postgres:13.0-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    enviroment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
